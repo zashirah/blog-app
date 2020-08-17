@@ -1,5 +1,5 @@
 const db = require("../db/connection");
-const Post = require("../models/post");
+const Post = require("../models/posts");
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
@@ -123,7 +123,7 @@ const main = async () => {
         "https://i.ibb.co/TwkVCj5/steve-johnson-Ann-Q-TOu-Bxc-unsplash-Cropped.jpg",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    },
+    }
   ];
 
   await Post.insertMany(posts);

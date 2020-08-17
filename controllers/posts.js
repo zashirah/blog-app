@@ -1,4 +1,4 @@
-const Post = require("../models/post");
+const Post = require("../models/posts");
 const db = require("../db/connection");
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));

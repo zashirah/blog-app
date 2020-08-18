@@ -1,10 +1,10 @@
 const db = require("../db/connection");
-const Post = require("../models/posts");
+const User = require("../models/users");
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 const main = async () => {
-  const posts = [
+  const users = [
     {
       firstName: "Zach",
       lastName: "Shirah",
@@ -23,8 +23,8 @@ const main = async () => {
     },
   ];
 
-  await Post.insertMany(posts);
-  console.log("Created posts!");
+  await User.insertMany(users);
+  console.log("Created users!");
 };
 const run = async () => {
   await main();

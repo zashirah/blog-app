@@ -1,5 +1,5 @@
-const Users = require("../models/users");
-const Posts = require("../models/posts");
+const User = require("../models/users");
+const Post = require("../models/posts");
 const db = require("../db/connection");
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));

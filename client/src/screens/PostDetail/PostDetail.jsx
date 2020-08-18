@@ -3,7 +3,7 @@ import "./PostDetail.css";
 import Layout from "../../components/shared/Layout/Layout";
 import { getPost, deletePost } from "../../services/posts";
 import { useParams, Link } from "react-router-dom";
-
+//
 const PostDetail = (props) => {
   const [post, setPost] = useState(null);
   const [isLoaded, setLoaded] = useState(false);

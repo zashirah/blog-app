@@ -24,10 +24,10 @@ const PostEdit = (props) => {
   }, [id])
 
   const handleChange = (event) => {
-    const { title, value } = event.target
+    const { name, value } = event.target
     setPost({
       ...post,
-      [title]: value,
+      [name]: value,
     })
   }
 
@@ -72,7 +72,7 @@ const PostEdit = (props) => {
             className="input-author"
             placeholder="Author"
             value={post.author}
-            name="Author"
+            name="author"
             required
             onChange={handleChange}
           />

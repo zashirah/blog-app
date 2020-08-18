@@ -20,7 +20,7 @@ const Posts = () => {
 
   const postsJSX = queriedPosts.map((post, index) => 
     <Post
-      _id={post.id}
+      _id={post._id}
       title={post.title}
       author={post.author}
       imgURL={post.imgURL}
@@ -41,3 +41,4 @@ const Posts = () => {
 }
 
 export default Posts
+

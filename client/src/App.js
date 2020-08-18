@@ -5,7 +5,7 @@ import Home from "./screens/Home/Home.jsx";
 import Posts from "./screens/Posts/Posts";
 import PostCreate from "./screens/PostCreate/PostCreate";
 import PostEdit from "./screens/PostEdit/PostEdit";
-// import PostDetail from "./screens/PostDetail/PostDetail";
+import PostDetail from "./screens/PostDetail/PostDetail";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
           <PostCreate />
         </Route>
         <Route exact path="/posts/:id/edit" component={PostEdit} />
-        {/* <Route exact path="/posts/:id" component={PostDetail} /> */}
+        <Route exact path="/posts/:id" component={PostDetail} />
       </Switch>
     </div>
   );

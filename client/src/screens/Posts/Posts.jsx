@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react'
 
 import { getPosts } from '../../services/posts'
 
-import Posts from '../../components/Post'
-import Layout from '../../components/shared/Layout'
+import Post from '../../components/Post/Post'
+import Layout from '../../components/shared/Layout/Layout'
 
 const Posts = () => {
   const [allPosts, setAllPosts] = useState([])
-  const [quieriedPosts, setQueriedPosts] = useState([])
+  const [queriedPosts, setQueriedPosts] = useState([])
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -19,7 +19,14 @@ const Posts = () => {
   }, [])
 
   const postsJSX = queriedPosts.map((post, index) => 
-    <Post _id={post.id} title={post.title} author={post.author} imgURL={post.imgURL} desciption={description} key={index}/>
+    <Post
+      _id={post.id}
+      title={post.title}
+      author={post.author}
+      imgURL={post.imgURL}
+      description={post.description}
+      key={index}
+    />
   )
 
   return (

@@ -15,10 +15,10 @@ const PostCreate = (props) => {
   const [isCreated, setCreated] = useState(false)
 
   const handleChange = (event) => {
-    const { title, value } = event.target
+    const { name, value } = event.target
     setPost({
       ...post,
-      [title]: value,
+      [name]: value,
     })
   }
 
@@ -32,7 +32,7 @@ const PostCreate = (props) => {
     return <Redirect to={`/posts`} />
   }
   return (
-    <Layout user={props.user}>
+    <Layout>
       <form className="create-form" onSubmit={handleSubmit}>
         <input
           className="input-title"

@@ -14,8 +14,8 @@ const getPosts = async (req, res) => {
 
 const getPost = async (req, res) => {
   try {
-    const { id } = req.params;
-    const post = await Post.findById(id);
+    const { postId } = req.params;
+    const post = await Post.findById(postId);
     if (post) {
       return res.json(post);
     }
@@ -37,9 +37,9 @@ const createPost = async (req, res) => {
 };
 
 const updatePost = async (req, res) => {
-  const { id } = req.params;
+  const { postId } = req.params;
   await Post.findByIdAndUpdate(
-    id,
+    postId,
     req.body,
     { new: true },
     (error, post) => {
@@ -56,8 +56,8 @@ const updatePost = async (req, res) => {
 
 const deletePost = async (req, res) => {
   try {
-    const { id } = req.params;
-    const deleted = await Post.findByIdAndDelete(id);
+    const { postId } = req.params;
+    const deleted = await Post.findByIdAndDelete(postId);
     if (deleted) {
       return res.status(200).send("Post deleted");
     }

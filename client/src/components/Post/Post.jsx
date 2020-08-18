@@ -10,8 +10,6 @@ const Post = (props) => {
                 <div className="post-author">{props.author}</div>
                 <img className="post-image" src={props.imgURL} alt={props.name} />
                 <div className="post-description">{props.description}</div>
-                
-                {/* <div className="price">{`$${props.price}`}</div> */}
             </Link>
         </>
     )

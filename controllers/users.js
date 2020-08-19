@@ -6,7 +6,7 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 const getUsers = async (req, res) => {
   try {
-    const users = await User.find();
+    const users = await User.find().populate("posts");
     res.json(users);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -29,7 +29,7 @@ const getUser = async (req, res) => {
 const getUserPosts = async (req, res) => {
   try {
     const { id } = req.params;
-    const user = await User.findById(id);
+    const user = await User.findById(id).populate("posts");
     if (user) {
       return res.json(user.posts);
     }

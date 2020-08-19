@@ -11,6 +11,6 @@ const router = Router();
 
 router.get("/users/:id/posts/", controllers.getUserPosts);
 router.get("/users/:id/posts/:postId", controllers.getUserPost);
-router.get("/users", controllers.getUser);
+router.get("/users", controllers.getUsers);
 
 module.exports = router;

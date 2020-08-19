@@ -15,7 +15,7 @@ const getPosts = async (req, res) => {
 const getPost = async (req, res) => {
   try {
     const { postId } = req.params;
-    const post = await Post.findById(postId);
+    const post = await Post.findById(postId).populate('userId')
     if (post) {
       return res.json(post);
     }

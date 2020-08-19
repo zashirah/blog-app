@@ -22,7 +22,7 @@ const Posts = () => {
     <Post
       _id={post._id}
       title={post.title}
-      author={post.author}
+      // author={post.userId.firstName + ' ' + post.userId.lastName}
       imgURL={post.imgURL}
       description={post.description}
       key={index}

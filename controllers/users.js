@@ -29,7 +29,7 @@ const getUser = async (req, res) => {
 const getUserPosts = async (req, res) => {
   try {
     const { id } = req.params;
-    const user = await User.findById(id).populate("posts");
+    const user = await User.findById(id);
     if (user) {
       return res.json(user.posts);
     }
@@ -42,7 +42,8 @@ const getUserPosts = async (req, res) => {
 const getUserPost = async (req, res) => {
  try {
    const { postId } = req.params;
-   const post = await Post.findById(postId);
+   const post = await (await Post.findById(postId));
+   
    if (post) {
      return res.json(post);
    }

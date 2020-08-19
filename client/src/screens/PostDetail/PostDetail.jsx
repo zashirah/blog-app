@@ -8,6 +8,7 @@ const PostDetail = (props) => {
   const [post, setPost] = useState(null);
   const [isLoaded, setLoaded] = useState(false);
   const { id } = useParams();
+  // const [user, ]
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -28,7 +29,7 @@ const PostDetail = (props) => {
         <img className="post-detail-image" src={post.imgURL} alt={post.name} />
         <div className="detail">
           <div className="name">{post.title}</div>
-          <div className="price">{post.author}</div>
+          <div className="price">{post.userId.firstName + ' ' + post.userId.lastName}</div>
           <div className="description">{post.description}</div>
           <div className="button-container">
             <button className="edit-button">
